@@ -24,8 +24,10 @@ define( 'PARTNER_DIR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PARTNER_DIR_URL', plugin_dir_url( __FILE__ ) );
 
 require_once PARTNER_DIR_PATH . 'includes/class-partner-cpt.php';
+require_once PARTNER_DIR_PATH . 'includes/class-partner-meta.php';
 
 function partner_directory_init(): void {
 	Partner_CPT::register();
+	Partner_Meta::register();
 }
 add_action( 'init', 'partner_directory_init' );
