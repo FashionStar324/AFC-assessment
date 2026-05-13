@@ -8,10 +8,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Partner_Block {
 
 	public static function register(): void {
-		add_action( 'init', [ self::class, 'register_block' ] );
+		self::register_block();
 	}
 
 	public static function register_block(): void {
+		$asset = require PARTNER_DIR_PATH . 'build/index.asset.php';
+
+		wp_register_script(
+			'partner-directory-block-editor',
+			PARTNER_DIR_URL . 'build/index.js',
+			$asset['dependencies'],
+			$asset['version']
+		);
+
+		wp_register_style(
+			'partner-directory-block-style',
+			PARTNER_DIR_URL . 'build/style-index.css',
+			[],
+			PARTNER_DIR_VERSION
+		);
+
 		register_block_type(
 			PARTNER_DIR_PATH . 'blocks/partner-grid/block.json',
 			[

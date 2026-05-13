@@ -27,6 +27,6 @@
 			"default": 3
 		}
 	},
-	"editorScript": "file:../../build/index.js",
-	"style": "file:../../build/style-index.css"
+	"editorScript": "partner-directory-block-editor",
+	"style": "partner-directory-block-style"
 }
