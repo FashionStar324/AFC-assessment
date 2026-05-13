@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "partner-directory/partner-grid",
+	"version": "1.0.0",
+	"title": "Partner Grid",
+	"category": "widgets",
+	"icon": "building",
+	"description": "Display a filterable grid of partner organizations.",
+	"keywords": [ "partners", "directory", "organizations" ],
+	"textdomain": "partner-directory",
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"attributes": {
+		"category": {
+			"type": "string",
+			"default": ""
+		},
+		"perPage": {
+			"type": "integer",
+			"default": 12
+		},
+		"columns": {
+			"type": "integer",
+			"default": 3
+		}
+	},
+	"editorScript": "file:../../build/index.js",
+	"style": "file:../../build/style-index.css"
+}

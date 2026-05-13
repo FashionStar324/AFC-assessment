@@ -26,10 +26,12 @@ define( 'PARTNER_DIR_URL', plugin_dir_url( __FILE__ ) );
 require_once PARTNER_DIR_PATH . 'includes/class-partner-cpt.php';
 require_once PARTNER_DIR_PATH . 'includes/class-partner-meta.php';
 require_once PARTNER_DIR_PATH . 'includes/class-partner-rest-api.php';
+require_once PARTNER_DIR_PATH . 'includes/class-partner-block.php';
 
 function partner_directory_init(): void {
 	Partner_CPT::register();
 	Partner_Meta::register();
 	Partner_REST_API::register();
+	Partner_Block::register();
 }
 add_action( 'init', 'partner_directory_init' );

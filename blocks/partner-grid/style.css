@@ -1,0 +1,111 @@
+.wp-block-partner-directory-partner-grid {
+	box-sizing: border-box;
+}
+
+.partner-grid {
+	display: grid;
+	gap: 1.5rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.partner-grid--cols-1 { grid-template-columns: repeat(1, 1fr); }
+.partner-grid--cols-2 { grid-template-columns: repeat(2, 1fr); }
+.partner-grid--cols-3 { grid-template-columns: repeat(3, 1fr); }
+.partner-grid--cols-4 { grid-template-columns: repeat(4, 1fr); }
+.partner-grid--cols-5 { grid-template-columns: repeat(5, 1fr); }
+.partner-grid--cols-6 { grid-template-columns: repeat(6, 1fr); }
+
+@media ( max-width: 768px ) {
+	.partner-grid {
+		grid-template-columns: repeat(2, 1fr) !important;
+	}
+}
+
+@media ( max-width: 480px ) {
+	.partner-grid {
+		grid-template-columns: 1fr !important;
+	}
+}
+
+.partner-card {
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	overflow: hidden;
+	transition: box-shadow 0.2s ease;
+}
+
+.partner-card:hover {
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.partner-card__link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1.5rem;
+	text-decoration: none;
+	color: inherit;
+	height: 100%;
+}
+
+.partner-card__logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 120px;
+	margin-bottom: 1rem;
+}
+
+.partner-card__logo img {
+	max-width: 100%;
+	max-height: 120px;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+}
+
+.partner-card__logo--placeholder {
+	background: #f3f4f6;
+	border-radius: 4px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #9ca3af;
+	font-size: 0.875rem;
+}
+
+.partner-card__name {
+	font-size: 1rem;
+	font-weight: 600;
+	text-align: center;
+	color: #111827;
+}
+
+.partner-card__categories {
+	margin-top: 0.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+	justify-content: center;
+}
+
+.partner-card__category-tag {
+	font-size: 0.75rem;
+	background: #f3f4f6;
+	color: #6b7280;
+	padding: 0.125rem 0.5rem;
+	border-radius: 9999px;
+}
+
+.partner-grid__empty {
+	padding: 2rem;
+	text-align: center;
+	color: #6b7280;
+	grid-column: 1 / -1;
+}
