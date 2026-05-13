@@ -1,0 +1,13 @@
+name: partner-directory
+type: wordpress
+docroot: wordpress
+php_version: "8.2"
+webserver_type: nginx-fpm
+database:
+  type: mariadb
+  version: "10.11"
+nodejs_version: "20"
+
+hooks:
+  post-start:
+    - exec: bash /var/www/html/.ddev/scripts/setup.sh
