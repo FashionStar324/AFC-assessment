@@ -1,0 +1,19 @@
+{
+	"name": "partner-directory",
+	"version": "1.0.0",
+	"description": "WordPress plugin to manage and display partner organizations.",
+	"license": "GPL-2.0-or-later",
+	"engines": {
+		"node": ">=20.0.0",
+		"npm": ">=10.0.0"
+	},
+	"scripts": {
+		"build": "wp-scripts build blocks/partner-grid/index.js --output-path=build",
+		"start": "wp-scripts start blocks/partner-grid/index.js --output-path=build",
+		"lint:js": "wp-scripts lint-js blocks/",
+		"lint:css": "wp-scripts lint-style blocks/"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^30.0.0"
+	}
+}
