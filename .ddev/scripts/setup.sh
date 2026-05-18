@@ -53,7 +53,13 @@ if ! wp plugin is-active partner-directory --path="$WP_PATH" --quiet 2>/dev/null
     wp plugin activate partner-directory --path="$WP_PATH" --quiet
 fi
 
-# ── 6. Build front-end assets ─────────────────────────────────────────────────
+# ── 6. Install default theme ─────────────────────────────────────────────────
+if ! wp theme is-installed twentytwentyfive --path="$WP_PATH" --quiet 2>/dev/null; then
+    echo "→ Installing Twenty Twenty-Five theme..."
+    wp theme install twentytwentyfive --activate --path="$WP_PATH" --quiet
+fi
+
+# ── 7. Build front-end assets ─────────────────────────────────────────────────
 if [ ! -d "$PLUGIN_SRC/node_modules" ]; then
     echo "→ Installing npm dependencies..."
     cd "$PLUGIN_SRC" && npm install --silent

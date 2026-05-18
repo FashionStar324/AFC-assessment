@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'PARTNER_DIR_VERSION', '1.0.0' );
 define( 'PARTNER_DIR_FILE', __FILE__ );
 define( 'PARTNER_DIR_PATH', plugin_dir_path( __FILE__ ) );
-define( 'PARTNER_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'PARTNER_DIR_URL', trailingslashit( WP_PLUGIN_URL ) . 'partner-directory/' );
 
 require_once PARTNER_DIR_PATH . 'includes/class-partner-cpt.php';
 require_once PARTNER_DIR_PATH . 'includes/class-partner-meta.php';
